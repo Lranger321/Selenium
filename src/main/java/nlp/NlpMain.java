@@ -12,6 +12,7 @@ public class NlpMain {
         FileWorker fileWorker = new FileWorker();
         NlpWorker nlpWorker = NlpWorker.getInstance();
         String text = fileWorker.getTextFromFile(FILE_PATH);
+        fileWorker.createResultDirectory();
         writeArrayToFile(fileWorker, RESULT_DIRECTORY_PATH + "tokens", nlpWorker.getTokensFromText(text));
         writeArrayToFile(fileWorker, RESULT_DIRECTORY_PATH + "sentences", nlpWorker.getSentences(text));
         writeMapToFile(fileWorker, RESULT_DIRECTORY_PATH + "lemmas", nlpWorker.getLemmasAndStemers(text));

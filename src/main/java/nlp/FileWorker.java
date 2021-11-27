@@ -30,4 +30,9 @@ public class FileWorker {
         bufferedWriter.write(text);
         bufferedWriter.close();
     }
+
+    public void createResultDirectory(){
+        File file = new File("result");
+        file.mkdir();
+    }
 }
